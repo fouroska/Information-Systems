@@ -1,0 +1,22 @@
+list_A=[1,44,2,30,4,5,65,1,4,65,2,3,23,23,4,44,5,6,5,4,5,0,65,-1,-6,-1,-6]
+
+def removeDuplicates(lista):
+    test = []
+    for i in lista:
+        if i not in test:
+            test.append(i)      
+    return test
+
+def sortList(lista):
+    for i in range(0,len(lista)-1):
+        for j in range(i+1,len(lista)):
+            if (lista[j]<lista[i]):    
+                temp=lista[i]
+                lista[i]=lista[j]
+                lista[j]=temp
+    print("Sorted list:",lista)
+
+print("My initial list:",list_A)
+list_final = removeDuplicates(list_A)
+print("My final list:",list_final)
+sortList(list_final)
